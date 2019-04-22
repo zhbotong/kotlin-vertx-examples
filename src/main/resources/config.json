@@ -1,7 +1,7 @@
 {
   "database": {
     "provider_class": "io.vertx.ext.jdbc.spi.impl.HikariCPDataSourceProvider",
-    "jdbcUrl": "jdbc:mysql://127.0.0.1:3306/diabetes_test?characterEncoding=utf-8",
+    "jdbcUrl": "jdbc:mysql://127.0.0.1:3306/shallow?characterEncoding=utf-8",
     "driverClassName": "com.mysql.cj.jdbc.Driver",
     "username": "root",
     "password": "123456"
