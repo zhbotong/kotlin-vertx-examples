@@ -1,0 +1,9 @@
+{
+  "database": {
+    "provider_class": "io.vertx.ext.jdbc.spi.impl.HikariCPDataSourceProvider",
+    "jdbcUrl": "jdbc:mysql://rm-bp1p9481wlgsa4h9uno.mysql.rds.aliyuncs.com:3306/diabetes_test?characterEncoding=utf-8",
+    "driverClassName": "com.mysql.cj.jdbc.Driver",
+    "username": "phoebusmed_dev",
+    "password": "YktVbBYIDfMMQT6Ih2xDNR3ZHBgU!I"
+  }
+}
