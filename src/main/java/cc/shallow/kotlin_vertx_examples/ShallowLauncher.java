@@ -1,9 +1,13 @@
 package cc.shallow.kotlin_vertx_examples;
 
+import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 import io.netty.util.internal.logging.InternalLoggerFactory;
 import io.netty.util.internal.logging.Slf4JLoggerFactory;
 import io.vertx.core.Launcher;
 import io.vertx.core.VertxOptions;
+import io.vertx.core.json.Json;
 
 import static io.vertx.core.spi.resolver.ResolverProvider.DISABLE_DNS_RESOLVER_PROP_NAME;
 
@@ -21,6 +25,13 @@ public class ShallowLauncher extends Launcher{
      */
     InternalLoggerFactory.setDefaultFactory(Slf4JLoggerFactory.INSTANCE);
     System.getProperties().setProperty("vertx.logger-delegate-factory-class-name","io.vertx.core.logging.SLF4JLogDelegateFactory");
+
+    /**
+     * add jackson jsr310
+     */
+    Json.mapper.registerModule( new ParameterNamesModule())
+      .registerModule(new Jdk8Module())
+      .registerModule(new JavaTimeModule());
     new ShallowLauncher().dispatch(args);
   }
 
