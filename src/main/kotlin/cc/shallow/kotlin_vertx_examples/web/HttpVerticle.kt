@@ -30,7 +30,7 @@ class HttpVerticle: CoroutineVerticle() {
     router.errorHandler(500){
       logger.error("error.......",it.failure())
     }
-    DemoHandler(vertx,jdbcClient).initRoute("/demo",router)
+    DemoHandler(vertx,jdbcClient).initRoute(router)
     vertx.createHttpServer()
       .requestHandler(router)
       .listenAwait(config.getInteger("http.port", 8080))

@@ -22,10 +22,11 @@ class DemoHandler(private val vertx: Vertx, private val jdbcClient: JDBCClient):
   /**
    * 每一个handler的路由管理
    */
-  fun initRoute(mountPoint:String,router: Router){
+  fun initRoute(router: Router){
+    val subRouter = Router.router(vertx)
     val apply = Router.router(vertx).apply {
-      route("/list").coroutineHandler { ctx -> list(ctx) }
+      subRouter.route("/list").coroutineHandler { ctx -> list(ctx) }
     }
-    router.mountSubRouter(mountPoint,apply)
+    router.mountSubRouter("/demo",apply)
   }
 }
