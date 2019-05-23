@@ -12,9 +12,14 @@ class DemoHandler(private val vertx: Vertx, private val jdbcClient: JDBCClient):
 
 
   private suspend fun list(ctx:RoutingContext){
-    val rows = jdbcClient.queryAwait("select * from user_info").rows
-    print(Json.encode(rows))
-    ctx.ok(rows)
+    try {
+      val rows = jdbcClient.queryAwait("select * from user_info").rows
+      print(Json.encode(rows))
+      ctx.ok(rows)
+    }catch (e:Exception){
+      e.printStackTrace()
+    }
+
    /* ctx.response().putHeader("content-type","application/json")
     .setStatusCode(200).end(Json.encodePrettily(rows))*/
   }
@@ -24,9 +29,7 @@ class DemoHandler(private val vertx: Vertx, private val jdbcClient: JDBCClient):
    */
   fun initRoute(router: Router){
     val subRouter = Router.router(vertx)
-    val apply = Router.router(vertx).apply {
-      subRouter.route("/list").coroutineHandler { ctx -> list(ctx) }
-    }
-    router.mountSubRouter("/demo",apply)
+    subRouter.route("/list").coroutineHandler { ctx -> list(ctx) }
+    router.mountSubRouter("/demo",subRouter)
   }
 }
