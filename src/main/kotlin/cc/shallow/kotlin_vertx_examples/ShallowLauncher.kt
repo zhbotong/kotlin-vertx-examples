@@ -1,27 +1,13 @@
 package cc.shallow.kotlin_vertx_examples
 
-import cc.shallow.kotlin_vertx_examples.web.DemoHandler
-import cc.shallow.kotlin_vertx_examples.web.HttpVerticle
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.fasterxml.jackson.module.paramnames.ParameterNamesModule
-import com.google.inject.Guice
-import com.google.inject.Stage
 import io.netty.util.internal.logging.InternalLoggerFactory
 import io.netty.util.internal.logging.Slf4JLoggerFactory
-import io.vertx.config.ConfigRetriever
 import io.vertx.core.Launcher
-import io.vertx.core.Vertx
-import io.vertx.core.VertxOptions
 import io.vertx.core.json.Json
-import io.vertx.core.spi.VerticleFactory
 import io.vertx.core.spi.resolver.ResolverProvider.DISABLE_DNS_RESOLVER_PROP_NAME
-import io.vertx.kotlin.config.configRetrieverOptionsOf
-import io.vertx.kotlin.config.configStoreOptionsOf
-import io.vertx.kotlin.config.getConfigAwait
-import io.vertx.kotlin.core.cli.optionOf
-import io.vertx.kotlin.core.deploymentOptionsOf
-import io.vertx.kotlin.core.json.jsonObjectOf
 
 class ShallowLauncher : Launcher() {
 /*  */

@@ -3,9 +3,7 @@ package cc.shallow.kotlin_vertx_examples.web
 import com.google.inject.Inject
 import io.vertx.core.http.HttpServer
 import io.vertx.core.logging.LoggerFactory
-import io.vertx.ext.jdbc.JDBCClient
 import io.vertx.ext.web.Router
-import io.vertx.ext.web.handler.*
 import io.vertx.kotlin.core.http.listenAwait
 import io.vertx.kotlin.coroutines.CoroutineVerticle
 

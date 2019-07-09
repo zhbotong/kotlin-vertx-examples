@@ -1,8 +1,6 @@
 package cc.shallow.kotlin_vertx_examples
 
 import com.google.inject.*
-import com.google.inject.name.Names
-import io.vertx.config.ConfigRetriever
 import io.vertx.core.Vertx
 import io.vertx.core.http.HttpServer
 import io.vertx.core.http.HttpServerOptions
@@ -10,12 +8,7 @@ import io.vertx.core.json.JsonObject
 import io.vertx.ext.jdbc.JDBCClient
 import io.vertx.ext.web.Router
 import io.vertx.ext.web.handler.*
-import io.vertx.kotlin.config.configRetrieverOptionsOf
-import io.vertx.kotlin.config.configStoreOptionsOf
-import io.vertx.kotlin.config.getConfigAwait
-import io.vertx.kotlin.core.json.jsonObjectOf
 import org.slf4j.LoggerFactory
-import java.util.*
 
   internal class RouterModule(private val vertx: Vertx,private val database:JsonObject) : PrivateModule() {
     private val logger = LoggerFactory.getLogger("RouterModule")
