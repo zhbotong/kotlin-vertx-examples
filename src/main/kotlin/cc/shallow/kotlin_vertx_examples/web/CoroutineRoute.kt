@@ -1,5 +1,6 @@
 package cc.shallow.kotlin_vertx_examples.web
 
+import com.google.inject.Singleton
 import io.vertx.core.Vertx
 import io.vertx.ext.web.Route
 import io.vertx.ext.web.RoutingContext
@@ -13,8 +14,9 @@ import kotlin.coroutines.CoroutineContext
  *
  *
  */
-open class CoroutineRoute(vertx: Vertx): CoroutineScope {
-  override val coroutineContext: CoroutineContext by lazy { vertx.dispatcher() }
+@Singleton
+open class CoroutineRoute: CoroutineScope {
+  override val coroutineContext: CoroutineContext by lazy { Vertx.vertx().dispatcher() }
 
   fun Route.coroutineHandler(fn:suspend (RoutingContext) -> Unit){
     handler {ctx ->
