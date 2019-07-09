@@ -28,4 +28,7 @@ To run your application:
 * https://groups.google.com/forum/?fromgroups#!forum/vertx[Vert.x User Group]
 * https://gitter.im/eclipse-vertx/vertx-users[Vert.x Gitter]
 
+== injector from
+
+* https://www.zsiegel.com/2019/07/03/depedency-injection-with-vertx
 
