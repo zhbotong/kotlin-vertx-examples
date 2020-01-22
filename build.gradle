@@ -19,7 +19,7 @@ ext {
 }
 
 application {
-  mainClassName = 'cc.shallow.kotlin_vertx_examples.ShallowLauncher'
+  mainClassName = 'cc.shallow.kotlin_vertx_examples.ShallowLauncherKt'
 }
 
 
